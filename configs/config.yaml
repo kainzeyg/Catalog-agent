@@ -1,0 +1,19 @@
+apiPort: 8080
+scanInterval: 300s
+healthInterval: 60s
+configReloadInterval: 30s
+logLevel: INFO
+serverUrl: http://localhost:8080
+
+ldap:
+  server: ldap.company.com
+  port: 636
+  baseDN: "DC=company,DC=com"
+  bindUser: "CN=Service Account,CN=Users,DC=company,DC=com"
+  bindPass: "secure_password"
+  timeout: 10s
+  enabled: true
+
+storage:
+  corporateResources: "configs/corporateResources.yaml"
+  personalResources: "configs/personalResources.yaml"

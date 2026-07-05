@@ -1,0 +1,27 @@
+resources:
+  - id: "personal_notes"
+    name: "Personal Notes"
+    type: file
+    description: "My personal notes file"
+    contexts: ["personal"]
+    owner: "user@company.com"
+    launch:
+      path: "C:\\Users\\user\\Documents\\notes.txt"
+  
+  - id: "favorites"
+    name: "My Favorite Sites"
+    type: web
+    description: "Personal bookmarks"
+    contexts: ["personal"]
+    owner: "user@company.com"
+    launch:
+      url: "https://my-favorites.com"
+  
+  - id: "projects_folder"
+    name: "Personal Projects"
+    type: folder
+    description: "My project folders"
+    contexts: ["personal", "development"]
+    owner: "user@company.com"
+    launch:
+      path: "C:\\Users\\user\\Projects"

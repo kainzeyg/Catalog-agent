@@ -1,0 +1,97 @@
+contexts:
+  - id: "development"
+    name: "Development Tools"
+    description: "Development and programming tools"
+    resources:
+      - id: "visual_studio_2022"
+        name: "Visual Studio 2022"
+        type: application
+        description: "IDE for .NET development"
+        contexts: ["development"]
+        accessGroups: ["DevTeam", "Architects", "Developers"]
+        instructionUrl: "https://docs.company.com/vs"
+        launch:
+          executable: "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe"
+          args: ["/nosplash"]
+      
+      - id: "git"
+        name: "Git Bash"
+        type: application
+        description: "Git version control system"
+        contexts: ["development"]
+        accessGroups: ["DevTeam", "Developers"]
+        launch:
+          executable: "C:\\Program Files\\Git\\git-bash.exe"
+      
+      - id: "postman"
+        name: "Postman"
+        type: application
+        description: "API development and testing"
+        contexts: ["development"]
+        accessGroups: ["DevTeam", "Developers"]
+        launch:
+          executable: "C:\\Users\\%USERNAME%\\AppData\\Local\\Postman\\Postman.exe"
+
+  - id: "business"
+    name: "Business Applications"
+    description: "Business and productivity applications"
+    resources:
+      - id: "jira"
+        name: "JIRA"
+        type: web
+        description: "Project management and issue tracking"
+        contexts: ["business"]
+        accessGroups: ["ProjectManagers", "IT_Team", "Developers"]
+        instructionUrl: "https://docs.company.com/jira"
+        launch:
+          url: "https://jira.company.com"
+      
+      - id: "confluence"
+        name: "Confluence"
+        type: web
+        description: "Documentation and knowledge base"
+        contexts: ["business"]
+        accessGroups: ["ProjectManagers", "IT_Team"]
+        launch:
+          url: "https://confluence.company.com"
+      
+      - id: "sharepoint"
+        name: "SharePoint"
+        type: web
+        description: "Company SharePoint portal"
+        contexts: ["business"]
+        accessGroups: ["AllEmployees"]
+        launch:
+          url: "https://sharepoint.company.com"
+
+  - id: "shared_resources"
+    name: "Shared Resources"
+    description: "Common company resources"
+    resources:
+      - id: "company_share"
+        name: "Company Shared Drive"
+        type: folder
+        description: "Company shared folder"
+        contexts: ["shared_resources"]
+        accessGroups: []
+        launch:
+          path: "\\\\server\\company_share"
+      
+      - id: "policies"
+        name: "Company Policies"
+        type: file
+        description: "Company policies and procedures"
+        contexts: ["shared_resources"]
+        accessGroups: ["AllEmployees"]
+        launch:
+          path: "\\\\server\\company_share\\Policies\\Employee_Handbook.pdf"
+      
+      - id: "helpdesk"
+        name: "IT Helpdesk"
+        type: web
+        description: "IT support portal"
+        contexts: ["shared_resources"]
+        accessGroups: []
+        instructionUrl: "https://support.company.com"
+        launch:
+          url: "https://helpdesk.company.com"
